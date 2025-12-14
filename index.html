@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>폰트병원</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+<body>
+
+<div id="loading">📺 방송 신호 수신 중…</div>
+
+<header>
+  <h1>🏥 폰트병원</h1>
+  <nav>
+    <button onclick="loadWard('in')">입원실</button>
+    <button onclick="loadWard('out')">퇴원실</button>
+    <button onclick="loadWard('iso')">격리실</button>
+    <button onclick="loadWard('lab')">실험실</button>
+    <button onclick="loadWard('dead')">기록보관소</button>
+  </nav>
+</header>
+
+<section class="panel">
+  <h2>📈 실시간 인기 환자</h2>
+  <div id="popular"></div>
+</section>
+
+<section class="panel">
+  <h2>📅 오늘 퇴원한 폰트</h2>
+  <div id="today"></div>
+</section>
+
+<section class="panel">
+  <h2>🚨 위험 수치 경고</h2>
+  <div id="danger"></div>
+</section>
+
+<main id="list"></main>
+
+<script type="module" src="app.js"></script>
+<script>
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.register("/sw.js");
+}
+</script>
+</body>
+</html>
