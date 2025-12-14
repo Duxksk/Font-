@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>폰트 입원실 | 폰트병원</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>📥 폰트 입원 접수</h1>
+
+<div class="card">
+  <input id="name" placeholder="폰트명">
+  <input id="author" placeholder="제작자 이름">
+  <input type="file" id="file" accept=".ttf,.otf,.woff,.woff2">
+  
+  <label>
+    <input type="checkbox" id="beta">
+    🧪 실험실(베타 폰트)
+  </label>
+
+  <button onclick="upload()">입원시키기</button>
+</div>
+
+<p>
+  ⚠ 입원된 폰트는 담당의 검진 후 퇴원 처리됩니다.
+</p>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
