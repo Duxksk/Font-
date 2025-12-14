@@ -1,0 +1,65 @@
+body {
+  background: #050505;
+  color: #0f0;
+  font-family: monospace;
+  margin: 0;
+}
+
+header, .panel {
+  padding: 10px;
+  border-bottom: 1px solid #0f0;
+}
+
+nav button {
+  background: black;
+  color: #0f0;
+  border: 1px solid #0f0;
+  margin: 2px;
+}
+
+.card {
+  border: 1px solid #0f0;
+  padding: 8px;
+  margin: 8px;
+}
+
+.ecg {
+  height: 20px;
+  background: repeating-linear-gradient(
+    90deg,
+    red 0 2px,
+    transparent 2px 6px
+  );
+  animation: ecgMove linear infinite;
+}
+
+@keyframes ecgMove {
+  from { background-position-x: 0; }
+  to { background-position-x: 100px; }
+}
+
+.danger {
+  border-color: red;
+  color: red;
+  animation: blink .8s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: .5; }
+}
+
+#loading {
+  position: fixed;
+  inset: 0;
+  background: black;
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: flicker .15s infinite;
+}
+
+@keyframes flicker {
+  50% { opacity: .85; }
+}
